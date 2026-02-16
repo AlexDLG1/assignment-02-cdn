@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# Assignment 02 — Static Web + CDN (AWS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web estática creada con **Vite + React + TypeScript**, desplegada en **AWS S3** y distribuida públicamente por **CloudFront**.  
+El objetivo es que cualquier persona pueda acceder a la app mediante una URL pública del CDN y que el repositorio muestre evidencia del flujo de trabajo (secrets + pipeline + commits).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 1) Proyecto (Vite)
 
-## React Compiler
+- Framework: Vite + React + TypeScript
+- Resultado del build: se genera la carpeta `dist/` para despliegue
+- Interfaz: aplicación estática 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 2) URL pública del CDN (CloudFront)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**URL pública:** `http://assignment-02-alexdlg1-cdn.s3-website-us-east-1.amazonaws.com/`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> Nota: La aplicación se puede abrir desde cualquier navegador en modo incógnito.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 3) Doppler (secrets)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Se configuró un proyecto en Doppler para manejar credenciales necesarias de despliegue (valores ocultos por seguridad).  
+La integración con GitHub se realizó mediante Sync.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Evidencias:**
+- Config Syncs (Doppler → GitHub)
+- Variables/Secrets en Doppler (valores ocultos)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+📌 Capturas:
+Las capturas se encuentran en docs
+
+---
+
+## 4) GitHub Secrets
+
+Se verificó la sección de Secrets en GitHub para el repositorio.  
+(En las capturas no se muestran valores, solo nombres.)
+
+
+
+
+---
+
+## 5) Pipeline (GitHub Actions)
+
+Se configuró un workflow en `.github/workflows/` con las etapas:
+
+- **Build:** instala dependencias y genera `dist/`
+- **Upload:** sube `dist/` al bucket de S3
+- **Invalidate:** invalida caché en CloudFront para reflejar cambios
+
+
+
+---
+
+## 6) Evidencia de commits (desarrollo incremental)
+
+La rama de entrega es: **`assignment-02`** (creada a partir de `main`).  
+Se realizaron múltiples commits para reflejar el avance incremental del proyecto.
+
+
+
+---
+
+## 7) Captura de la aplicación
+
+📌 Captura:
+Las capturas se encuentran en docs
+
+---
+
+## 8) Diagrama de flujo del CI/CD
+
+Se incluye un diagrama simple del flujo del pipeline:
+
+📌 Archivo:
+Las capturas se encuentran en docs
+
