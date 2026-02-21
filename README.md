@@ -9,7 +9,7 @@ El objetivo es que cualquier persona pueda acceder a la app mediante una URL pú
 
 - Framework: Vite + React + TypeScript
 - Resultado del build: se genera la carpeta `dist/` para despliegue
-- Interfaz: aplicación estática 
+- Interfaz: aplicación estática
 
 ---
 
@@ -27,6 +27,7 @@ Se configuró un proyecto en Doppler para manejar credenciales necesarias de des
 La integración con GitHub se realizó mediante Sync.
 
 **Evidencias:**
+
 - Config Syncs (Doppler → GitHub)
 - Variables/Secrets en Doppler (valores ocultos)
 
@@ -40,9 +41,6 @@ Las capturas se encuentran en docs
 Se verificó la sección de Secrets en GitHub para el repositorio.  
 (En las capturas no se muestran valores, solo nombres.)
 
-
-
-
 ---
 
 ## 5) Pipeline (GitHub Actions)
@@ -53,16 +51,12 @@ Se configuró un workflow en `.github/workflows/` con las etapas:
 - **Upload:** sube `dist/` al bucket de S3
 - **Invalidate:** invalida caché en CloudFront para reflejar cambios
 
-
-
 ---
 
 ## 6) Evidencia de commits (desarrollo incremental)
 
 La rama de entrega es: **`assignment-02`** (creada a partir de `main`).  
 Se realizaron múltiples commits para reflejar el avance incremental del proyecto.
-
-
 
 ---
 
@@ -80,3 +74,4 @@ Se incluye un diagrama simple del flujo del pipeline:
 📌 Archivo:
 Las capturas se encuentran en docs
 
+Prueba Husky
