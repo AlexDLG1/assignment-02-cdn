@@ -9,7 +9,7 @@ El objetivo es que cualquier persona pueda acceder a la app mediante una URL pú
 
 - Framework: Vite + React + TypeScript
 - Resultado del build: se genera la carpeta `dist/` para despliegue
-- Interfaz: aplicación estática 
+- Interfaz: aplicación estática
 
 ---
 
@@ -30,18 +30,16 @@ La integración con GitHub se realizó mediante Sync.
 - Config Syncs (Doppler → GitHub)
 - Variables/Secrets en Doppler (valores ocultos)
 
-📌 Capturas:
-Las capturas se encuentran en docs
+📌 Todas las imágenes de evidencia se encuentran en la carpeta `docs/`.
 
 ---
 
 ## 4) GitHub Secrets
 
 Se verificó la sección de Secrets en GitHub para el repositorio.  
-(En las capturas no se muestran valores, solo nombres.)
+(En las capturas no se muestran valores, solo nombres).
 
-
-
+📌 Todas las imágenes de evidencia se encuentran en la carpeta `docs/`.
 
 ---
 
@@ -53,7 +51,7 @@ Se configuró un workflow en `.github/workflows/` con las etapas:
 - **Upload:** sube `dist/` al bucket de S3
 - **Invalidate:** invalida caché en CloudFront para reflejar cambios
 
-
+📌 Todas las imágenes de evidencia se encuentran en la carpeta `docs/`.
 
 ---
 
@@ -62,21 +60,33 @@ Se configuró un workflow en `.github/workflows/` con las etapas:
 La rama de entrega es: **`assignment-02`** (creada a partir de `main`).  
 Se realizaron múltiples commits para reflejar el avance incremental del proyecto.
 
-
+📌 Todas las imágenes de evidencia se encuentran en la carpeta `docs/`.
 
 ---
 
 ## 7) Captura de la aplicación
 
-📌 Captura:
-Las capturas se encuentran en docs
+Se incluye evidencia visual de la aplicación desplegada y funcionando correctamente.
+
+📌 Todas las imágenes de evidencia se encuentran en la carpeta `docs/`.
 
 ---
 
 ## 8) Diagrama de flujo del CI/CD
 
-Se incluye un diagrama simple del flujo del pipeline:
+Se incluye un diagrama simple del flujo del pipeline para el despliegue automático.
 
-📌 Archivo:
-Las capturas se encuentran en docs
+📌 Todas las imágenes de evidencia se encuentran en la carpeta `docs/`.
 
+---
+
+## 9) Capturas y diagramas (docs)
+
+### Captura de evidencia 1
+![Captura de evidencia 1](docs/b666c5bb-26e0-41b0-adde-fe859303e8d3.jpg)
+
+### Captura de evidencia 2
+![Captura de evidencia 2](docs/image.png)
+
+### Diagrama de flujo CI/CD
+![Diagrama CI/CD](docs/diagrama.png)
