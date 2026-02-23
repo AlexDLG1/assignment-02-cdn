@@ -37,7 +37,7 @@ En esta tarea se creó una aplicación web sencilla con **Vite + React + TypeScr
 ## Evidencias
 
 ### 1) Pipeline exitoso en GitHub Actions
-![Pipeline exitoso](docs/actions-success.png)
+![Pipeline exitoso](docs/actions-success.png.png)
 
 ### 2) Entorno en Elastic Beanstalk
 ![Elastic Beanstalk env](docs/assignment-03-beanstalk-env.png)
@@ -46,7 +46,7 @@ En esta tarea se creó una aplicación web sencilla con **Vite + React + TypeScr
 ![Husky proof](docs/husky-proof.png)
 
 ### 4) Aplicación corriendo
-![App running](docs/app-running.png)
+![App running](docs/app-running.png.png)
 
 ---
 
