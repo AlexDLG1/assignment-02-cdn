@@ -1,77 +1,59 @@
-# Assignment 02 — Static Web + CDN (AWS)
+# Assignment 03 — Deploy con Docker + Elastic Beanstalk (AWS)
 
-Aplicación web estática creada con **Vite + React + TypeScript**, desplegada en **AWS S3** y distribuida públicamente por **CloudFront**.  
-El objetivo es que cualquier persona pueda acceder a la app mediante una URL pública del CDN y que el repositorio muestre evidencia del flujo de trabajo (secrets + pipeline + commits).
-
----
-
-## 1) Proyecto (Vite)
-
-- Framework: Vite + React + TypeScript
-- Resultado del build: se genera la carpeta `dist/` para despliegue
-- Interfaz: aplicación estática
+## Descripción
+En esta tarea se creó una aplicación web sencilla con **Vite + React + TypeScript**, se dockerizó y se configuró un **pipeline en GitHub Actions** para desplegarla en **AWS Elastic Beanstalk** usando **Amazon ECR**.
 
 ---
 
-## 2) URL pública del CDN (CloudFront)
-
-**URL pública:** `http://assignment-02-alexdlg1-cdn.s3-website-us-east-1.amazonaws.com/`
-
-> Nota: La aplicación se puede abrir desde cualquier navegador en modo incógnito.
-
----
-
-## 3) Doppler (secrets)
-
-Se configuró un proyecto en Doppler para manejar credenciales necesarias de despliegue (valores ocultos por seguridad).  
-La integración con GitHub se realizó mediante Sync.
-
-**Evidencias:**
-
-- Config Syncs (Doppler → GitHub)
-- Variables/Secrets en Doppler (valores ocultos)
-
-📌 Capturas:
-Las capturas se encuentran en docs
+## Tecnologías usadas
+- Vite
+- React
+- TypeScript
+- Docker
+- GitHub Actions
+- AWS Elastic Beanstalk
+- Amazon ECR
+- Husky + lint-staged
 
 ---
 
-## 4) GitHub Secrets
-
-Se verificó la sección de Secrets en GitHub para el repositorio.  
-(En las capturas no se muestran valores, solo nombres.)
-
----
-
-## 5) Pipeline (GitHub Actions)
-
-Se configuró un workflow en `.github/workflows/` con las etapas:
-
-- **Build:** instala dependencias y genera `dist/`
-- **Upload:** sube `dist/` al bucket de S3
-- **Invalidate:** invalida caché en CloudFront para reflejar cambios
+## Objetivo de la tarea
+- Crear una app web estática sencilla
+- Configurar **Dockerfile**
+- Configurar **Husky** para validaciones antes del commit
+- Crear pipeline de **GitHub Actions**
+- Subir imagen Docker a **Amazon ECR**
+- Desplegar en **Elastic Beanstalk**
 
 ---
 
-## 6) Evidencia de commits (desarrollo incremental)
-
-La rama de entrega es: **`assignment-02`** (creada a partir de `main`).  
-Se realizaron múltiples commits para reflejar el avance incremental del proyecto.
-
----
-
-## 7) Captura de la aplicación
-
-📌 Captura:
-Las capturas se encuentran en docs
+## Archivos importantes
+- `Dockerfile`
+- `.github/workflows/deploy-beanstalk.yml`
+- `.husky/pre-commit`
 
 ---
 
-## 8) Diagrama de flujo del CI/CD
+## Evidencias
 
-Se incluye un diagrama simple del flujo del pipeline:
+### 1) Pipeline exitoso en GitHub Actions
+![Pipeline exitoso](docs/actions-success.png)
 
-📌 Archivo:
-Las capturas se encuentran en docs
+### 2) Entorno en Elastic Beanstalk
+![Elastic Beanstalk env](docs/assignment-03-beanstalk-env.png)
 
-Prueba Husky
+### 3) Prueba de Husky / lint-staged
+![Husky proof](docs/husky-proof.png)
+
+### 4) Aplicación corriendo
+![App running](docs/app-running.png)
+
+---
+
+## Nota
+El despliegue se configuró en la rama **`assignment-03`** y se reutilizó el repositorio de la tarea anterior, agregando la configuración nueva para Docker + Beanstalk.
+
+---
+
+## Autor
+Alexander Emiliano
