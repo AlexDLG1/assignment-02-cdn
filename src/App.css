@@ -55,16 +55,45 @@ code{ background: rgba(255,255,255,.08); padding: .1rem .35rem; border-radius: .
 .brand__name{ font-weight: 700; }
 .brand__tag{ font-size: .9rem; color: var(--muted); }
 
+/* ✅ NUEVO: pastillita (badge) de versión */
+.pill{
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 .nav{ display:flex; gap:.9rem; flex-wrap: wrap; }
 .nav a{
   padding: .45rem .7rem;
   border-radius: 999px;
   border: 1px solid transparent;
   color: var(--muted);
+  /* ✅ NUEVO: transición simple */
+  transition: transform .12s ease, opacity .12s ease, background .12s ease, border-color .12s ease;
 }
-.nav a:hover{ border-color: var(--border); color: var(--text); background: rgba(255,255,255,.04); }
+.nav a:hover{
+  border-color: var(--border);
+  color: var(--text);
+  background: rgba(255,255,255,.04);
+  /* ✅ NUEVO: mini elevación */
+  transform: translateY(-1px);
+  opacity: .85;
+}
 
-.hero{ padding: 3rem 0 2rem; }
+/* ✅ MODIFICADO: hero ahora es un panel con degradado suave */
+.hero{
+  padding: 24px;
+  margin: 3rem 0 2rem;
+  background: linear-gradient(135deg, rgba(0, 140, 255, 0.18), rgba(255, 0, 140, 0.10));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
 .hero h1{ margin: 0 0 .75rem; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.1; }
 .hero p{ margin: 0 0 1.25rem; color: var(--muted); max-width: 70ch; }
 

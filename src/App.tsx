@@ -8,7 +8,9 @@ export default function App() {
           <div className="brand">
             <div className="brand__logo">A</div>
             <div>
-              <div className="brand__name">Alex — Assignment 02</div>
+              <div className="brand__name">
+                Alex — Assignment 04 <span className="pill">v1.1</span>
+              </div>
               <div className="brand__tag">Vite + React + TS · Static Web</div>
             </div>
           </div>
@@ -102,7 +104,7 @@ export default function App() {
 
       <footer className="footer">
         <div className="container footer__inner">
-          <span>© {new Date().getFullYear()} · Assignment 02</span>
+          <span>© {new Date().getFullYear()} · Assignment 04</span>
           <span className="muted">Vite · React · TypeScript</span>
         </div>
       </footer>
