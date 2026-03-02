@@ -96,9 +96,9 @@ export default function App() {
 
         <section id="about" className="section">
           <h2>About</h2>
-          <p className="muted">
-            Proyecto académico para desplegar una app estática usando CDN en AWS.
-          </p>
+<p className="muted">
+  Proyecto académico para desplegar una app estática usando CDN y Docker.
+</p>
         </section>
       </main>
 
