@@ -1,4 +1,5 @@
 # Assignment 04 — Docker Hub + GitHub Actions
+> Evidencias de Docker Hub y pipeline CI/CD.
 
 Aplicación web estática creada con **Vite + React + TypeScript**, dockerizada con **Nginx** y publicada automáticamente en **Docker Hub** usando **GitHub Actions**.
 
