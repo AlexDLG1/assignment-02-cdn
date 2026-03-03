@@ -46,7 +46,8 @@ El workflow ejecuta:
   Se solucionó usando otro puerto, por ejemplo `-p 8081:80`.
 
 ---
-
+VISUAL STUDIO 
+![Tags en Docker Hub](./evidencias/visual.jpeg)
 ## Ejecución local
 ```bash
 docker build -t assignment-04-local .
